@@ -96,11 +96,11 @@ public class GeradorNumerosAleatorios {
 		gerador.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
-
 		
 		System.out.println("Gerador com Métodos de Congruência Misto");
 		gerador.geraValores(3, 7, 1, 13, MetodoGeracao.MISTO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
+
 	}
 }

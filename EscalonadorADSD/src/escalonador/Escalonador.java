@@ -1,6 +1,9 @@
 package escalonador;
 
-import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Random;
 
@@ -13,8 +16,6 @@ public class Escalonador extends Thread{
 	private static int PRIMEIRO=0;
 	private int indiceElemento;
 	private boolean escalonadorVago;
-
-	private PrintWriter writer;
 	
 	//private static Random selecionaNumero = new Random();
 	private static Random gerador = new Random();
@@ -68,8 +69,7 @@ public class Escalonador extends Thread{
 
 		while(this.tempoTotal > tempoAtual) {
 	        new Thread(fila1).start();
-	        new Thread(fila2).start();
-			
+	        new Thread(fila2).start();	
 			
 			if(escalonadorVago) {
 				escalonadorVago = false;
@@ -92,6 +92,17 @@ public class Escalonador extends Thread{
 	}
 	
 	public void Log() {
+		FileOutputStream arquivoSaida = null;
+		try {
+		   arquivoSaida = new FileOutputStream("Eventos_Simulacao.txt", true);
+		   final PrintStream printStream = new PrintStream(arquivoSaida);
+		   // aqui ocorre o redirecionamento de System.out
+		   System.setOut(printStream);
+		} catch(final FileNotFoundException e) {
+		   // tratamento do erro
+			e.printStackTrace();
+	    }
+		
 		if(escalonadorVago) {
 			System.out.println("Evento de saída, momento: " + tempoAtual);
 		}else {
@@ -101,13 +112,34 @@ public class Escalonador extends Thread{
 		System.out.println("Elementos na fila 2: " + numElemFila2);
 		System.out.println("Elemento no serviço: " + indiceElemento);	
 		System.out.println();
+		
+		// fechando streams
+		try {
+			if(arquivoSaida != null) {
+			   arquivoSaida.close();
+			}
+		} catch(final IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void main(String[] args) {
 		int tempoDeEscalonamento = 100;
+
+		System.out.println("--------------- Inicio da Simulação ---------------");
+		System.out.println();
+		System.out.println("############## Parânmetros Utilizados ##############");
+		System.out.println("Tempo em Segundos: "+tempoDeEscalonamento);
+		System.out.println("Metodo para GNA: "+ MetodoGeracao.MULTIPLICATIVO);
+		
 		Escalonador esc = new Escalonador(tempoDeEscalonamento);
 		esc.start();
 		
+		System.out.println("Saida (Arquivo com os eventos): Eventos_Simulacao.txt");
+		System.out.println("#####################################################");
+
+		System.out.println();
+		System.out.println("---------- Simulação Finalizada com Êxito ----------");
 	}
 		
 }
