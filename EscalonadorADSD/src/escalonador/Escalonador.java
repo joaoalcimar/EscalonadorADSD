@@ -1,6 +1,7 @@
 package escalonador;
 
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.Random;
 
 public class Escalonador extends Thread{
@@ -9,10 +10,18 @@ public class Escalonador extends Thread{
 	private int tempoTotal;
 	private static int numElemFila1;
 	private static int numElemFila2;
+	private static int PRIMEIRO=0;
 	private int indiceElemento;
 	private boolean escalonadorVago;
+
 	private PrintWriter writer;
+	
+	//private static Random selecionaNumero = new Random();
 	private static Random gerador = new Random();
+	private static GeradorNumerosAleatorios geradorNumerosAleatorios = new GeradorNumerosAleatorios();
+	private static List<Integer> sequenciaAleatoria1;
+	private static List<Integer> sequenciaAleatoria2;
+	private static List<Integer> sequenciaAleatoria3;
 
 	public Escalonador(int tempoTotal) {
 		this.tempoTotal = tempoTotal;
@@ -22,11 +31,16 @@ public class Escalonador extends Thread{
 		Escalonador.numElemFila1 = 0;
 		Escalonador.numElemFila2 = 0;
 		
+    	sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
+    	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
+    	sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
 	}
 	
     private static Runnable fila1 = new Runnable() {
         public void run() {
             try{
+            	//sleep(1 + gerador.nextInt(12));
+            	//sleep(sequenciaAleatoria1.remove(PRIMEIRO));
             	Escalonador.numElemFila1++;
             } catch (Exception e){}
  
@@ -36,7 +50,8 @@ public class Escalonador extends Thread{
     private static Runnable fila2 = new Runnable() {
         public void run() {
             try{
-            	sleep(1 + gerador.nextInt(4));
+            	//sleep(1 + gerador.nextInt(4));
+            	sleep(sequenciaAleatoria2.remove(PRIMEIRO));
             	Escalonador.numElemFila2++;
             } catch (Exception e){}
        }
@@ -55,6 +70,7 @@ public class Escalonador extends Thread{
 				Log();
 
 				tempoAtual += 2 + gerador.nextInt(5);
+				//tempoAtual += sequenciaAleatoria3.remove(PRIMEIRO);
 				if(numElemFila1 != 0) {
 					numElemFila1--;
 					escalonadorVago = true;
@@ -81,15 +97,13 @@ public class Escalonador extends Thread{
 		System.out.println();
 	}
 	
-	
 	public static void main(String[] args) {
 		int tempoDeEscalonamento = 100;
 		Escalonador esc = new Escalonador(tempoDeEscalonamento);
 		esc.start();
 		
 	}
-	
-	
+		
 }
 
 

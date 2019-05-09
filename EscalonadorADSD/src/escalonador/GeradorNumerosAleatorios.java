@@ -21,7 +21,7 @@ public class GeradorNumerosAleatorios {
 		return this.valores.get(indexUltimoElemento);
 	}
 	
-	private void geraValor(int x_atual, int k, int c, int mod) {
+	private void adicionarValorAleatorio(int x_atual, int k, int c, int mod) {
 		int x_prox = 0; // Tambem conhecido por X(n+1)
 		int indexUltimoElemento = this.valores.size()-1;
 
@@ -51,15 +51,11 @@ public class GeradorNumerosAleatorios {
 		this.mod= mod;
 		this.metodoGeracao = metodoGeracao;
 		
-		int ultimoElemento = 0;
-		
+		/* Adicionando primeiro valor */
 		this.valores.add(this.semente);
-
-		while(ultimoElemento<(this.mod-1)){
-			geraValor(getUltimoElemento(), this.k, this.c, this.mod);
-			ultimoElemento += 1;
-		}
-		
+		for (int i = 0; i < mod - 1; i++) {
+			adicionarValorAleatorio(getUltimoElemento(), this.k, this.c, this.mod);
+		}	
 		return this.valores;
 	}
 	
