@@ -47,15 +47,13 @@ public class Escalonador extends Thread{
             try{
             	//sleep(1 + gerador.nextInt(12));
             	//sleep(sequenciaAleatoria1.get(indice1));
-				if (indice1 < sequenciaAleatoria1.size()-1) {
-					indice1++;	
-				} else {
-					indice1 = 0;
-				}
-				
+				      if (indice1 < sequenciaAleatoria1.size()-1) {
+					      indice1++;	
+				      } else {
+					      indice1 = 0;
+				    }
             	Escalonador.numElemFila1++;
             } catch (Exception e){}
- 
         }
     };
  
