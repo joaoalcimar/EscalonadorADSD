@@ -84,11 +84,12 @@ public class GeradorNumerosAleatorios {
 	
 	public static void main(String[] args) {
 		/* Start */
-		System.out.println("INICIO");
+		System.out.println("-------- INICIO --------");
 		GeradorNumerosAleatorios gerador = new GeradorNumerosAleatorios();
 		
+		System.out.println("-> Exemplos Ilustrativos");
 		System.out.println("Gerador com Métodos de Congruência Aditivo");
-		gerador.geraValores(3, 5, 0, 7, MetodoGeracao.ADITIVO);
+		gerador.geraValores(12, 7, 0, 11, MetodoGeracao.ADITIVO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
 		
@@ -98,7 +99,7 @@ public class GeradorNumerosAleatorios {
 		gerador.apagaValores();
 		
 		System.out.println("Gerador com Métodos de Congruência Misto");
-		gerador.geraValores(3, 7, 1, 13, MetodoGeracao.MISTO);
+		gerador.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
 
