@@ -31,6 +31,12 @@ public class Escalonador extends Thread{
 		Escalonador.numElemFila1 = 0;
 		Escalonador.numElemFila2 = 0;
 		
+		/*
+		 * 
+		 * Geração de Numeros Aleatorios (Parâmetros):		
+		 * geraValores(semente, k, c, mod, MetodoGeracao)
+		 * 
+		 */
     	sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
     	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
     	sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);

@@ -4,40 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GeradorNumerosAleatorios {
-	private List<Integer> valores;
+	private List<Integer> sequenciaAleatoria;
 	private int semente; // Tambem conhecido por Xn
 	private int k;
-	private int mod;
 	private int c;
+	private int mod;
 	
 	private MetodoGeracao metodoGeracao;
 	
 	public GeradorNumerosAleatorios() {
-		this.valores = new ArrayList<Integer>();
+		this.sequenciaAleatoria = new ArrayList<Integer>();
 	}
 	
 	private int getUltimoElemento() {
-		int indexUltimoElemento = this.valores.size()-1;
-		return this.valores.get(indexUltimoElemento);
+		int indexUltimoElemento = this.sequenciaAleatoria.size()-1;
+		return this.sequenciaAleatoria.get(indexUltimoElemento);
 	}
 	
 	private void adicionarValorAleatorio(int x_atual, int k, int c, int mod) {
 		int x_prox = 0; // Tambem conhecido por X(n+1)
-		int indexUltimoElemento = this.valores.size()-1;
+		int indexUltimoElemento = this.sequenciaAleatoria.size()-1;
 
 		switch (metodoGeracao) {
 			case ADITIVO:
 				//System.out.println("TESTE -> "+x_atual+" .... "+indexUltimoElemento );
-				x_prox = (x_atual + this.valores.get(indexUltimoElemento)) % mod;		
-				this.valores.add(x_prox);
+				x_prox = (x_atual + this.sequenciaAleatoria.get(indexUltimoElemento)) % mod;		
+				this.sequenciaAleatoria.add(x_prox);
 				break;
 			case MULTIPLICATIVO:
 				x_prox = (k*x_atual) % mod;		
-				this.valores.add(x_prox);
+				this.sequenciaAleatoria.add(x_prox);
 				break;
 			case MISTO:
 				x_prox = ((k*x_atual)+ c) % mod;		
-				this.valores.add(x_prox);				
+				this.sequenciaAleatoria.add(x_prox);				
 				break;
 			default:
 				System.out.println("Este não é um metodo válido!");
@@ -52,15 +52,15 @@ public class GeradorNumerosAleatorios {
 		this.metodoGeracao = metodoGeracao;
 		
 		/* Adicionando primeiro valor */
-		this.valores.add(this.semente);
+		this.sequenciaAleatoria.add(this.semente);
 		for (int i = 0; i < mod - 1; i++) {
 			adicionarValorAleatorio(getUltimoElemento(), this.k, this.c, this.mod);
 		}	
-		return this.valores;
+		return this.sequenciaAleatoria;
 	}
 	
 	public void apagaValores(){
-		this.valores.clear();
+		this.sequenciaAleatoria.clear();
 		this.semente = 0;
 		this.k = 0;
 		this.c = 0;
@@ -70,11 +70,11 @@ public class GeradorNumerosAleatorios {
 	public String toString() {
 		String listaNumerosAleatorios = "[";
 		
-		for (int i = 0; i < this.valores.size(); i++) {
+		for (int i = 0; i < this.sequenciaAleatoria.size(); i++) {
 			if (i==0) {
-				listaNumerosAleatorios += this.valores.get(i);
+				listaNumerosAleatorios += this.sequenciaAleatoria.get(i);
 			} else {
-				listaNumerosAleatorios += ", "+ this.valores.get(i);	
+				listaNumerosAleatorios += ", "+ this.sequenciaAleatoria.get(i);	
 			}
 		}
 		listaNumerosAleatorios += "]";	
