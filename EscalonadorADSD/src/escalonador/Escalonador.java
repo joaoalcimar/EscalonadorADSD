@@ -27,6 +27,7 @@ public class Escalonador extends Thread{
     private static Runnable fila1 = new Runnable() {
         public void run() {
             try{
+		sleep(1 + gerador.nextInt(12));
             	Escalonador.numElemFila1++;
             } catch (Exception e){}
  
