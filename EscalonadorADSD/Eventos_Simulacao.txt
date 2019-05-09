@@ -1,0 +1,480 @@
+Evento de chegada, momento: 0
+Elementos na fila 1: 1
+Elementos na fila 2: 0
+Elemento no serviço: 1
+
+Evento de saída, momento: 2
+Elementos na fila 1: 0
+Elementos na fila 2: 0
+Elemento no serviço: 1
+
+Evento de chegada, momento: 2
+Elementos na fila 1: 1
+Elementos na fila 2: 0
+Elemento no serviço: 2
+
+Evento de saída, momento: 7
+Elementos na fila 1: 0
+Elementos na fila 2: 0
+Elemento no serviço: 2
+
+Evento de chegada, momento: 7
+Elementos na fila 1: 1
+Elementos na fila 2: 1
+Elemento no serviço: 3
+
+Evento de saída, momento: 12
+Elementos na fila 1: 0
+Elementos na fila 2: 1
+Elemento no serviço: 3
+
+Evento de chegada, momento: 12
+Elementos na fila 1: 1
+Elementos na fila 2: 2
+Elemento no serviço: 4
+
+Evento de saída, momento: 16
+Elementos na fila 1: 0
+Elementos na fila 2: 2
+Elemento no serviço: 4
+
+Evento de chegada, momento: 16
+Elementos na fila 1: 1
+Elementos na fila 2: 3
+Elemento no serviço: 5
+
+Evento de saída, momento: 19
+Elementos na fila 1: 0
+Elementos na fila 2: 3
+Elemento no serviço: 5
+
+Evento de chegada, momento: 19
+Elementos na fila 1: 1
+Elementos na fila 2: 3
+Elemento no serviço: 6
+
+Evento de saída, momento: 25
+Elementos na fila 1: 0
+Elementos na fila 2: 4
+Elemento no serviço: 6
+
+Evento de chegada, momento: 25
+Elementos na fila 1: 1
+Elementos na fila 2: 4
+Elemento no serviço: 7
+
+Evento de saída, momento: 31
+Elementos na fila 1: 0
+Elementos na fila 2: 4
+Elemento no serviço: 7
+
+Evento de chegada, momento: 31
+Elementos na fila 1: 1
+Elementos na fila 2: 6
+Elemento no serviço: 8
+
+Evento de saída, momento: 35
+Elementos na fila 1: 0
+Elementos na fila 2: 6
+Elemento no serviço: 8
+
+Evento de chegada, momento: 35
+Elementos na fila 1: 1
+Elementos na fila 2: 6
+Elemento no serviço: 9
+
+Evento de saída, momento: 41
+Elementos na fila 1: 0
+Elementos na fila 2: 6
+Elemento no serviço: 9
+
+Evento de chegada, momento: 41
+Elementos na fila 1: 1
+Elementos na fila 2: 8
+Elemento no serviço: 10
+
+Evento de saída, momento: 46
+Elementos na fila 1: 0
+Elementos na fila 2: 8
+Elemento no serviço: 10
+
+Evento de chegada, momento: 46
+Elementos na fila 1: 1
+Elementos na fila 2: 9
+Elemento no serviço: 11
+
+Evento de saída, momento: 49
+Elementos na fila 1: 0
+Elementos na fila 2: 9
+Elemento no serviço: 11
+
+Evento de chegada, momento: 49
+Elementos na fila 1: 1
+Elementos na fila 2: 10
+Elemento no serviço: 12
+
+Evento de saída, momento: 55
+Elementos na fila 1: 0
+Elementos na fila 2: 10
+Elemento no serviço: 12
+
+Evento de chegada, momento: 55
+Elementos na fila 1: 1
+Elementos na fila 2: 11
+Elemento no serviço: 13
+
+Evento de saída, momento: 59
+Elementos na fila 1: 0
+Elementos na fila 2: 11
+Elemento no serviço: 13
+
+Evento de chegada, momento: 59
+Elementos na fila 1: 1
+Elementos na fila 2: 11
+Elemento no serviço: 14
+
+Evento de saída, momento: 61
+Elementos na fila 1: 0
+Elementos na fila 2: 11
+Elemento no serviço: 14
+
+Evento de chegada, momento: 61
+Elementos na fila 1: 1
+Elementos na fila 2: 12
+Elemento no serviço: 15
+
+Evento de saída, momento: 63
+Elementos na fila 1: 0
+Elementos na fila 2: 12
+Elemento no serviço: 15
+
+Evento de chegada, momento: 63
+Elementos na fila 1: 1
+Elementos na fila 2: 12
+Elemento no serviço: 16
+
+Evento de saída, momento: 68
+Elementos na fila 1: 0
+Elementos na fila 2: 12
+Elemento no serviço: 16
+
+Evento de chegada, momento: 68
+Elementos na fila 1: 1
+Elementos na fila 2: 14
+Elemento no serviço: 17
+
+Evento de saída, momento: 70
+Elementos na fila 1: 0
+Elementos na fila 2: 14
+Elemento no serviço: 17
+
+Evento de chegada, momento: 70
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 18
+
+Evento de saída, momento: 74
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 18
+
+Evento de chegada, momento: 74
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 19
+
+Evento de saída, momento: 78
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 19
+
+Evento de chegada, momento: 78
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 20
+
+Evento de saída, momento: 80
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 20
+
+Evento de chegada, momento: 80
+Elementos na fila 1: 1
+Elementos na fila 2: 18
+Elemento no serviço: 21
+
+Evento de saída, momento: 84
+Elementos na fila 1: 0
+Elementos na fila 2: 18
+Elemento no serviço: 21
+
+Evento de chegada, momento: 84
+Elementos na fila 1: 1
+Elementos na fila 2: 19
+Elemento no serviço: 22
+
+Evento de saída, momento: 89
+Elementos na fila 1: 0
+Elementos na fila 2: 19
+Elemento no serviço: 22
+
+Evento de chegada, momento: 89
+Elementos na fila 1: 1
+Elementos na fila 2: 20
+Elemento no serviço: 23
+
+Evento de saída, momento: 95
+Elementos na fila 1: 0
+Elementos na fila 2: 20
+Elemento no serviço: 23
+
+Evento de chegada, momento: 95
+Elementos na fila 1: 1
+Elementos na fila 2: 20
+Elemento no serviço: 24
+
+Evento de saída, momento: 100
+Elementos na fila 1: 0
+Elementos na fila 2: 20
+Elemento no serviço: 24
+
+Evento de chegada, momento: 0
+Elementos na fila 1: 1
+Elementos na fila 2: 0
+Elemento no serviço: 1
+
+Evento de saída, momento: 6
+Elementos na fila 1: 0
+Elementos na fila 2: 0
+Elemento no serviço: 1
+
+Evento de chegada, momento: 6
+Elementos na fila 1: 1
+Elementos na fila 2: 0
+Elemento no serviço: 2
+
+Evento de saída, momento: 11
+Elementos na fila 1: 0
+Elementos na fila 2: 0
+Elemento no serviço: 2
+
+Evento de chegada, momento: 11
+Elementos na fila 1: 1
+Elementos na fila 2: 0
+Elemento no serviço: 3
+
+Evento de saída, momento: 16
+Elementos na fila 1: 0
+Elementos na fila 2: 1
+Elemento no serviço: 3
+
+Evento de chegada, momento: 16
+Elementos na fila 1: 1
+Elementos na fila 2: 2
+Elemento no serviço: 4
+
+Evento de saída, momento: 18
+Elementos na fila 1: 0
+Elementos na fila 2: 2
+Elemento no serviço: 4
+
+Evento de chegada, momento: 18
+Elementos na fila 1: 1
+Elementos na fila 2: 2
+Elemento no serviço: 5
+
+Evento de saída, momento: 23
+Elementos na fila 1: 0
+Elementos na fila 2: 2
+Elemento no serviço: 5
+
+Evento de chegada, momento: 23
+Elementos na fila 1: 1
+Elementos na fila 2: 3
+Elemento no serviço: 6
+
+Evento de saída, momento: 26
+Elementos na fila 1: 0
+Elementos na fila 2: 3
+Elemento no serviço: 6
+
+Evento de chegada, momento: 26
+Elementos na fila 1: 1
+Elementos na fila 2: 4
+Elemento no serviço: 7
+
+Evento de saída, momento: 32
+Elementos na fila 1: 0
+Elementos na fila 2: 4
+Elemento no serviço: 7
+
+Evento de chegada, momento: 32
+Elementos na fila 1: 1
+Elementos na fila 2: 4
+Elemento no serviço: 8
+
+Evento de saída, momento: 38
+Elementos na fila 1: 0
+Elementos na fila 2: 4
+Elemento no serviço: 8
+
+Evento de chegada, momento: 38
+Elementos na fila 1: 1
+Elementos na fila 2: 4
+Elemento no serviço: 9
+
+Evento de saída, momento: 42
+Elementos na fila 1: 0
+Elementos na fila 2: 4
+Elemento no serviço: 9
+
+Evento de chegada, momento: 42
+Elementos na fila 1: 1
+Elementos na fila 2: 6
+Elemento no serviço: 10
+
+Evento de saída, momento: 47
+Elementos na fila 1: 0
+Elementos na fila 2: 6
+Elemento no serviço: 10
+
+Evento de chegada, momento: 47
+Elementos na fila 1: 1
+Elementos na fila 2: 8
+Elemento no serviço: 11
+
+Evento de saída, momento: 51
+Elementos na fila 1: 0
+Elementos na fila 2: 8
+Elemento no serviço: 11
+
+Evento de chegada, momento: 51
+Elementos na fila 1: 1
+Elementos na fila 2: 9
+Elemento no serviço: 12
+
+Evento de saída, momento: 56
+Elementos na fila 1: 0
+Elementos na fila 2: 9
+Elemento no serviço: 12
+
+Evento de chegada, momento: 56
+Elementos na fila 1: 1
+Elementos na fila 2: 11
+Elemento no serviço: 13
+
+Evento de saída, momento: 59
+Elementos na fila 1: 0
+Elementos na fila 2: 12
+Elemento no serviço: 13
+
+Evento de chegada, momento: 59
+Elementos na fila 1: 1
+Elementos na fila 2: 12
+Elemento no serviço: 14
+
+Evento de saída, momento: 61
+Elementos na fila 1: 0
+Elementos na fila 2: 13
+Elemento no serviço: 14
+
+Evento de chegada, momento: 61
+Elementos na fila 1: 1
+Elementos na fila 2: 14
+Elemento no serviço: 15
+
+Evento de saída, momento: 64
+Elementos na fila 1: 0
+Elementos na fila 2: 14
+Elemento no serviço: 15
+
+Evento de chegada, momento: 64
+Elementos na fila 1: 1
+Elementos na fila 2: 14
+Elemento no serviço: 16
+
+Evento de saída, momento: 69
+Elementos na fila 1: 0
+Elementos na fila 2: 14
+Elemento no serviço: 16
+
+Evento de chegada, momento: 69
+Elementos na fila 1: 1
+Elementos na fila 2: 14
+Elemento no serviço: 17
+
+Evento de saída, momento: 73
+Elementos na fila 1: 0
+Elementos na fila 2: 14
+Elemento no serviço: 17
+
+Evento de chegada, momento: 73
+Elementos na fila 1: 1
+Elementos na fila 2: 15
+Elemento no serviço: 18
+
+Evento de saída, momento: 76
+Elementos na fila 1: 0
+Elementos na fila 2: 15
+Elemento no serviço: 18
+
+Evento de chegada, momento: 76
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 19
+
+Evento de saída, momento: 79
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 19
+
+Evento de chegada, momento: 79
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 20
+
+Evento de saída, momento: 84
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 20
+
+Evento de chegada, momento: 84
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 21
+
+Evento de saída, momento: 88
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 21
+
+Evento de chegada, momento: 88
+Elementos na fila 1: 1
+Elementos na fila 2: 16
+Elemento no serviço: 22
+
+Evento de saída, momento: 93
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 22
+
+Evento de chegada, momento: 93
+Elementos na fila 1: 1
+Elementos na fila 2: 18
+Elemento no serviço: 23
+
+Evento de saída, momento: 98
+Elementos na fila 1: 0
+Elementos na fila 2: 18
+Elemento no serviço: 23
+
+Evento de chegada, momento: 98
+Elementos na fila 1: 1
+Elementos na fila 2: 19
+Elemento no serviço: 24
+
+Evento de saída, momento: 102
+Elementos na fila 1: 0
+Elementos na fila 2: 19
+Elemento no serviço: 24
+

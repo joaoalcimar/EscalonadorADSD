@@ -33,10 +33,8 @@ public class Escalonador extends Thread{
 		Escalonador.numElemFila2 = 0;
 		
 		/*
-		 * 
 		 * Geração de Numeros Aleatorios (Parâmetros):		
 		 * geraValores(semente, k, c, mod, MetodoGeracao)
-		 * 
 		 */
     	sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
     	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
@@ -64,9 +62,31 @@ public class Escalonador extends Thread{
        }
     };
 	
+    private void limparDados() {
+		FileOutputStream arquivoLimpo = null;
+		final PrintStream printStream;
+		try {
+		   arquivoLimpo = new FileOutputStream("Eventos_Simulacao.txt", true);
+		   printStream = new PrintStream(arquivoLimpo);
+		   // Redirecionamento de System.out para Arquivo de Saida
+		   System.setOut(printStream);
+		} catch(final FileNotFoundException e) {
+			e.printStackTrace();
+	    }
+		// Fechando Stream de Saida
+		try {
+			if(arquivoLimpo != null) {
+			   arquivoLimpo.close();
+			}
+		} catch(final IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
     @Override
 	public void run() {
 
+    	limparDados();
 		while(this.tempoTotal > tempoAtual) {
 	        new Thread(fila1).start();
 	        new Thread(fila2).start();	
@@ -93,13 +113,13 @@ public class Escalonador extends Thread{
 	
 	public void Log() {
 		FileOutputStream arquivoSaida = null;
+		final PrintStream printStream;
 		try {
 		   arquivoSaida = new FileOutputStream("Eventos_Simulacao.txt", true);
-		   final PrintStream printStream = new PrintStream(arquivoSaida);
-		   // aqui ocorre o redirecionamento de System.out
+		   printStream = new PrintStream(arquivoSaida);
+		   // Redirecionamento de System.out para Arquivo de Saida
 		   System.setOut(printStream);
 		} catch(final FileNotFoundException e) {
-		   // tratamento do erro
 			e.printStackTrace();
 	    }
 		
@@ -113,7 +133,7 @@ public class Escalonador extends Thread{
 		System.out.println("Elemento no serviço: " + indiceElemento);	
 		System.out.println();
 		
-		// fechando streams
+		// Fechando Stream de Saida
 		try {
 			if(arquivoSaida != null) {
 			   arquivoSaida.close();
@@ -143,5 +163,3 @@ public class Escalonador extends Thread{
 	}
 		
 }
-
-
