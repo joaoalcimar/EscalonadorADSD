@@ -17,19 +17,34 @@ public class GeradorNumerosAleatorios {
 	}
 	
 	private int getUltimoElemento() {
+		if(this.sequenciaAleatoria.size()==0) {
+			return 0;
+		}
 		int indexUltimoElemento = this.sequenciaAleatoria.size()-1;
 		return this.sequenciaAleatoria.get(indexUltimoElemento);
 	}
 	
+	/**
+	 * Metodo que realiza a geração de um numero aleatorio
+	 * dado um dos metodos listados		
+	 * @param semente, k, c, mod, MetodoGeracao
+	 */
 	private void adicionarValorAleatorio(int x_atual, int k, int c, int mod) {
 		int x_prox = 0; // Tambem conhecido por X(n+1)
 		int indexUltimoElemento = this.sequenciaAleatoria.size()-1;
 
 		switch (metodoGeracao) {
 			case ADITIVO:
-				//System.out.println("TESTE -> "+x_atual+" .... "+indexUltimoElemento );
-				x_prox = (x_atual + this.sequenciaAleatoria.get(indexUltimoElemento)) % mod;		
-				this.sequenciaAleatoria.add(x_prox);
+				/* Gera lista de numeros inicial */
+				geraValores(this.semente, k, c, mod, MetodoGeracao.MISTO);
+				indexUltimoElemento = this.sequenciaAleatoria.size()-1;
+				
+				/* Completa restante da lista de numeros */
+				for (int i = 0; i <= mod; i++) {
+					indexUltimoElemento = this.sequenciaAleatoria.size()-1;
+					x_prox = (this.sequenciaAleatoria.get(indexUltimoElemento) + this.sequenciaAleatoria.get(i)) % mod;
+					this.sequenciaAleatoria.add(x_prox);
+				}
 				break;
 			case MULTIPLICATIVO:
 				x_prox = (k*x_atual) % mod;		
@@ -45,6 +60,11 @@ public class GeradorNumerosAleatorios {
 	}
 	
 	public List<Integer> geraValores(int semente, int k, int c, int mod, MetodoGeracao metodoGeracao) {
+		if (k >= mod || c >= mod) {
+			System.out.println("Os valores de 'k' ou 'c' não compativeis!");
+			return this.sequenciaAleatoria;
+		}
+		
 		this.semente = semente;
 		this.k = k;
 		this.c = c;
@@ -52,10 +72,13 @@ public class GeradorNumerosAleatorios {
 		this.metodoGeracao = metodoGeracao;
 		
 		/* Adicionando primeiro valor */
-		this.sequenciaAleatoria.add(this.semente);
+		if (metodoGeracao!=MetodoGeracao.ADITIVO) {
+			this.sequenciaAleatoria.add(this.semente);	
+		}
+		
 		for (int i = 0; i < mod - 1; i++) {
 			adicionarValorAleatorio(getUltimoElemento(), this.k, this.c, this.mod);
-		}	
+		}
 		return this.sequenciaAleatoria;
 	}
 	
@@ -83,13 +106,13 @@ public class GeradorNumerosAleatorios {
 
 	
 	public static void main(String[] args) {
-		/* Start */
+		/* Start of Test */
 		System.out.println("-------- INICIO --------");
 		GeradorNumerosAleatorios gerador = new GeradorNumerosAleatorios();
 		
 		System.out.println("-> Exemplos Ilustrativos");
 		System.out.println("Gerador com Métodos de Congruência Aditivo");
-		gerador.geraValores(12, 7, 0, 11, MetodoGeracao.ADITIVO);
+		gerador.geraValores(7, 2, 3, 5, MetodoGeracao.ADITIVO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
 		
@@ -97,8 +120,14 @@ public class GeradorNumerosAleatorios {
 		gerador.geraValores(3, 5, 0, 7, MetodoGeracao.MULTIPLICATIVO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();
+		gerador.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
+		System.out.println( gerador.toString() );
+		gerador.apagaValores();
 		
 		System.out.println("Gerador com Métodos de Congruência Misto");
+		gerador.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
+		System.out.println( gerador.toString() );
+		gerador.apagaValores();
 		gerador.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
 		System.out.println( gerador.toString() );
 		gerador.apagaValores();

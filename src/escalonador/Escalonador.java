@@ -36,7 +36,7 @@ public class Escalonador extends Thread{
 		 * Geração de Numeros Aleatorios (Parâmetros):		
 		 * geraValores(semente, k, c, mod, MetodoGeracao)
 		 */
-    	sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(12, 7, 0, 11, MetodoGeracao.ADITIVO);
+		sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
     	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
     	sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
     	//sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(6, 1, 2, 5, MetodoGeracao.MISTO);
@@ -47,11 +47,11 @@ public class Escalonador extends Thread{
             try{
             	//sleep(1 + gerador.nextInt(12));
             	//sleep(sequenciaAleatoria1.get(indice1));
-				      if (indice1 < sequenciaAleatoria1.size()-1) {
-					      indice1++;	
-				      } else {
-					      indice1 = 0;
-				    }
+				if (indice1 < sequenciaAleatoria1.size()-1) {
+				      indice1++;	
+				} else {
+				      indice1 = 0;
+				}
             	Escalonador.numElemFila1++;
             } catch (Exception e){}
         }
@@ -60,14 +60,12 @@ public class Escalonador extends Thread{
     private static Runnable fila2 = new Runnable() {
         public void run() {
             try{
-            	//sleep(1 + gerador.nextInt(4));
             	sleep(sequenciaAleatoria2.get(indice2));
 				if (indice2 < sequenciaAleatoria2.size()-1) {
 					indice2++;	
 				} else {
 					indice2 = 0;
 				}
-				
             	Escalonador.numElemFila2++;
             } catch (Exception e){}
        }
@@ -76,14 +74,18 @@ public class Escalonador extends Thread{
     private void limparDados() {
 		FileOutputStream arquivoLimpo = null;
 		final PrintStream printStream;
+		
+		// Abrindo Stream de Saida
 		try {
 		   arquivoLimpo = new FileOutputStream("Saida_Simulacao.txt", false);
 		   printStream = new PrintStream(arquivoLimpo);
+		  
 		   // Redirecionamento de System.out para Arquivo de Saida
 		   System.setOut(printStream);
 		} catch(final FileNotFoundException e) {
 			e.printStackTrace();
 	    }
+		
 		// Fechando Stream de Saida
 		try {
 			if(arquivoLimpo != null) {
@@ -106,7 +108,6 @@ public class Escalonador extends Thread{
 				escalonadorVago = false;
 				Log();
 
-				//tempoAtual += 2 + gerador.nextInt(5);
 				tempoAtual += 1 + sequenciaAleatoria3.get(indice3);
 				if (indice3 < sequenciaAleatoria3.size()-1) {
 					indice3++;	
@@ -131,9 +132,12 @@ public class Escalonador extends Thread{
 	public void Log() {
 		FileOutputStream arquivoSaida = null;
 		final PrintStream printStream;
+
+		// Abrindo Stream de Saida
 		try {
 		   arquivoSaida = new FileOutputStream("Saida_Simulacao.txt", true);
 		   printStream = new PrintStream(arquivoSaida);
+
 		   // Redirecionamento de System.out para Arquivo de Saida
 		   System.setOut(printStream);
 		} catch(final FileNotFoundException e) {
@@ -167,7 +171,8 @@ public class Escalonador extends Thread{
 		System.out.println();
 		System.out.println("############## Parânmetros Utilizados ##############");
 		System.out.println("Tempo em Segundos: " + tempoDeEscalonamento);
-		System.out.println("Metodo para GNA: " + MetodoGeracao.MULTIPLICATIVO);
+		System.out.println("Metodos para GNA: -" + MetodoGeracao.MULTIPLICATIVO);
+		System.out.println("                  -" + MetodoGeracao.MISTO);
 		
 		Escalonador esc = new Escalonador(tempoDeEscalonamento);
 		esc.start();
