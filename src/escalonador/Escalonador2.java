@@ -7,7 +7,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.Random;
 
-public class Escalonador extends Thread{
+public class Escalonador2 extends Thread{
 
 	private int tempoAtual;
 	private int tempoTotal;
@@ -18,7 +18,7 @@ public class Escalonador extends Thread{
 	private PrintWriter writer;
 	private static Random gerador = new Random();
 
-	public Escalonador(int tempoTotal) {
+	public Escalonador2(int tempoTotal) {
 		this.tempoTotal = tempoTotal;
 		this.escalonadorVago = true;
 		this.indiceElemento = 1;
@@ -113,7 +113,7 @@ public class Escalonador extends Thread{
 	
 	public static void main(String[] args) {
 		int tempoDeEscalonamento = 100;
-		Escalonador esc = new Escalonador(tempoDeEscalonamento);
+		Escalonador2 esc = new Escalonador2(tempoDeEscalonamento);
 		esc.start();
 		
 	}
