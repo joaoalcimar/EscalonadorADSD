@@ -22,15 +22,16 @@ public class Escalonador extends Thread{
 	private boolean isReceive;
 	
     private static Random rand = new Random();
-        
-	
-	private static GeradorNumerosAleatorios geradorNumerosAleatorios = new GeradorNumerosAleatorios();
-	private static int indice1 = 0;
-    private static int indice2 = 0;
-    private static int indice3 = 0;
-	private static List<Integer> sequenciaAleatoria1;
-	private static List<Integer> sequenciaAleatoria2;
-	private static List<Integer> sequenciaAleatoria3;
+      
+	private GeradorNumerosAleatorios geradorNumerosAleatorios1 = new GeradorNumerosAleatorios();
+	private GeradorNumerosAleatorios geradorNumerosAleatorios2 = new GeradorNumerosAleatorios();
+	private GeradorNumerosAleatorios geradorNumerosAleatorios3 = new GeradorNumerosAleatorios();
+	private List<Integer> sequenciaAleatoria1;
+	private List<Integer> sequenciaAleatoria2;
+	private List<Integer> sequenciaAleatoria3;
+	private int indice1;
+    private int indice2;
+    private int indice3;
 
 	public Escalonador(int tempoTotal) {
 		this.tempoTotal = tempoTotal;
@@ -42,20 +43,19 @@ public class Escalonador extends Thread{
 		this.servidorLivre = true;
 		this.tempoAtual = 0;
 		this.elementoEmAtendimento = "Sem elemento";
-		
-		this.isReceive = false;
 		this.numElemServico = 0;
+		this.isReceive = false;
 		
-		
-		
+		this.indice1 = 0;
+	    this.indice2 = 0;
+	    this.indice3 = 0;
 		/*
 		 * Geração de Numeros Aleatorios (Parâmetros):		
 		 * geraValores(semente, k, c, mod, MetodoGeracao)
 		 */
-		sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
-    	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(5, 2, 4, 5, MetodoGeracao.MISTO);
-    	sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
-    	//sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(6, 1, 2, 5, MetodoGeracao.MISTO);
+		this.sequenciaAleatoria1 = geradorNumerosAleatorios1.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
+    	this.sequenciaAleatoria2 = geradorNumerosAleatorios2.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
+    	this.sequenciaAleatoria3 = geradorNumerosAleatorios3.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
 	}
 	
     @Override
@@ -135,22 +135,7 @@ public class Escalonador extends Thread{
         }
         
 	}
-
-	private void finalizaAtendimento() {
-		this.numElemServico--;
-	    this.servidorLivre = true;
-	    this.isReceive=false;
-	    //log();
-	}
-
-	private void escalonaProximaChegada(char fila) {
-        if (fila == '1') {
-            this.proxChegada1 = 1 + rand.nextInt(12);
-        } else {
-            this.proxChegada2 = 1 + rand.nextInt(12);
-        }
-	}
-
+    
 	private void iniciaAtendimento(char fila) {
 		this.numElemServico++;
         if (fila == '1') {
@@ -166,8 +151,42 @@ public class Escalonador extends Thread{
         }
 
         this.servidorLivre = false;
-        this.proxAtendimento = 2 + rand.nextInt(5);
+        
+        this.proxAtendimento += 1 + sequenciaAleatoria3.get(indice3);
+        //this.proxAtendimento = 2 + rand.nextInt(5);
+		if (indice3 < sequenciaAleatoria3.size()-1) {
+			indice3++;	
+		} else {
+			indice3 = 0;
+		}
+		
         log();
+	}
+	
+	private void finalizaAtendimento() {
+		this.numElemServico--;
+	    this.servidorLivre = true;
+	    this.isReceive=false;
+	}
+
+	private void escalonaProximaChegada(char fila) {
+        if (fila == '1') {
+            this.proxChegada1 = sequenciaAleatoria1.get(indice1);
+            //this.proxChegada1 = 1 + rand.nextInt(12);
+			if (indice1 < sequenciaAleatoria1.size()-1) {
+				indice1++;	
+			} else {
+				indice1 = 0;
+			}
+        } else {
+            this.proxChegada2 = sequenciaAleatoria2.get(indice2);
+            //this.proxChegada2 = 1 + rand.nextInt(4);
+			if (indice2 < sequenciaAleatoria2.size()-1) {
+				indice2++;	
+			} else {
+				indice2 = 0;
+			}
+        }
 	}
 
 	private void tempoSimulacao() {
@@ -182,7 +201,6 @@ public class Escalonador extends Thread{
         	this.proxAtendimento -= 1;        	
         }	
 	}
-
 	
     private void limparDados() {
 		FileOutputStream arquivoLimpo = null;
