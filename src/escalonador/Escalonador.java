@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
-import java.util.Random;
 
 public class Escalonador extends Thread{
 
@@ -20,35 +19,18 @@ public class Escalonador extends Thread{
     private String elementoEmAtendimento;
 	private int numElemServico;
 	private boolean isReceive;
-	
-    private static Random rand = new Random();
-      
+	      
 	private GeradorNumerosAleatorios geradorNumerosAleatorios1 = new GeradorNumerosAleatorios();
 	private GeradorNumerosAleatorios geradorNumerosAleatorios2 = new GeradorNumerosAleatorios();
 	private GeradorNumerosAleatorios geradorNumerosAleatorios3 = new GeradorNumerosAleatorios();
 	private List<Integer> sequenciaAleatoria1;
 	private List<Integer> sequenciaAleatoria2;
 	private List<Integer> sequenciaAleatoria3;
-	private int indice1;
-    private int indice2;
-    private int indice3;
+	private int indice1 = 0;
+    private int indice2 = 0;
+    private int indice3 = 0;
 
 	public Escalonador(int tempoTotal) {
-		this.tempoTotal = tempoTotal;
-		this.numElemFila1 = 0;
-		this.numElemFila2 = 0;
-	    this.proxChegada1 = 1 + rand.nextInt(12);
-	    this.proxChegada2 =  1 + rand.nextInt(5);
-	    this.proxAtendimento = 0;
-		this.servidorLivre = true;
-		this.tempoAtual = 0;
-		this.elementoEmAtendimento = "Sem elemento";
-		this.numElemServico = 0;
-		this.isReceive = false;
-		
-		this.indice1 = 0;
-	    this.indice2 = 0;
-	    this.indice3 = 0;
 		/*
 		 * Geração de Numeros Aleatorios (Parâmetros):		
 		 * geraValores(semente, k, c, mod, MetodoGeracao)
@@ -56,6 +38,22 @@ public class Escalonador extends Thread{
 		this.sequenciaAleatoria1 = geradorNumerosAleatorios1.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
     	this.sequenciaAleatoria2 = geradorNumerosAleatorios2.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
     	this.sequenciaAleatoria3 = geradorNumerosAleatorios3.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
+    	
+		this.tempoTotal = tempoTotal;
+		this.numElemFila1 = 0;
+		this.numElemFila2 = 0;
+	    this.proxChegada1 = sequenciaAleatoria1.get(indice1);
+	    this.proxChegada2 =  sequenciaAleatoria2.get(indice2);
+	    this.proxAtendimento = 0;
+		this.servidorLivre = true;
+		this.tempoAtual = 0;
+		this.elementoEmAtendimento = "Sem elemento";
+		this.numElemServico = 0;
+		this.isReceive = false;
+		
+		this.indice1 = 1;
+	    this.indice2 = 1;
+	    this.indice3 = 0;
 	}
 	
     @Override

@@ -3,57 +3,47 @@ Elementos na fila 1: 0
 Elementos na fila 2: 0
 Elemento no serviço: 0 (Sem elemento)
 
-Evento de chegada, momento: 1 segundos
+Evento de chegada, momento: 4 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 0
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 2 segundos
+Evento de chegada, momento: 5 segundos
 Elementos na fila 1: 0
-Elementos na fila 2: 1
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 3 segundos
-Elementos na fila 1: 1
 Elementos na fila 2: 1
 Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 6 segundos
-Elementos na fila 1: 1
+Elementos na fila 1: 0
 Elementos na fila 2: 2
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 7 segundos
-Elementos na fila 1: 1
+Evento de chegada, momento: 8 segundos
+Elementos na fila 1: 0
 Elementos na fila 2: 3
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de saída, momento: 7 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 3
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 9 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 4
-Elemento no serviço: 1 (Elemento da classe 1)
-
 Evento de saída, momento: 10 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 2
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 11 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 3
 Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 12 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 4
+Elementos na fila 1: 1
+Elementos na fila 2: 3
 Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de saída, momento: 13 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 3
+Elemento no serviço: 1 (Elemento da classe 1)
 
 Evento de chegada, momento: 15 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 4
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de saída, momento: 15 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 4
 Elemento no serviço: 1 (Elemento da classe 1)
@@ -63,59 +53,59 @@ Elementos na fila 1: 0
 Elementos na fila 2: 5
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 17 segundos
+Evento de chegada, momento: 18 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 6
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 17 segundos
+Evento de saída, momento: 18 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 5
 Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 19 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 6
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de saída, momento: 21 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 5
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 22 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 5
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 22 segundos
+Evento de saída, momento: 20 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 5
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 21 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 6
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 24 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 6
-Elemento no serviço: 1 (Elemento da classe 2)
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 24 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 6
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 25 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 7
+Elemento no serviço: 1 (Elemento da classe 1)
 
 Evento de chegada, momento: 26 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 7
-Elemento no serviço: 1 (Elemento da classe 2)
+Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 27 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 7
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 27 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 8
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de saída, momento: 27 segundos
+Evento de chegada, momento: 26 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 8
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 29 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 8
+Evento de chegada, momento: 28 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 9
 Elemento no serviço: 1 (Elemento da classe 1)
 
 Evento de chegada, momento: 29 segundos
@@ -128,74 +118,74 @@ Elementos na fila 1: 1
 Elementos na fila 2: 9
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 32 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 9
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 32 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 10
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de saída, momento: 35 segundos
+Evento de chegada, momento: 31 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 10
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 36 segundos
-Elementos na fila 1: 1
+Evento de saída, momento: 33 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 10
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 35 segundos
+Elementos na fila 1: 0
 Elementos na fila 2: 11
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 37 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 12
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de saída, momento: 37 segundos
+Evento de chegada, momento: 36 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 12
 Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 38 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 13
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 38 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 12
+Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 39 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 12
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de saída, momento: 40 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 12
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 41 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 13
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 41 segundos
+Evento de chegada, momento: 43 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 13
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 44 segundos
 Elementos na fila 1: 0
-Elementos na fila 2: 12
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 42 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 12
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 42 segundos
-Elementos na fila 1: 1
 Elementos na fila 2: 13
-Elemento no serviço: 1 (Elemento da classe 2)
+Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 46 segundos
-Elementos na fila 1: 2
-Elementos na fila 2: 13
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 46 segundos
-Elementos na fila 1: 2
+Evento de chegada, momento: 45 segundos
+Elementos na fila 1: 0
 Elementos na fila 2: 14
-Elemento no serviço: 1 (Elemento da classe 2)
+Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 47 segundos
-Elementos na fila 1: 2
+Evento de chegada, momento: 46 segundos
+Elementos na fila 1: 0
 Elementos na fila 2: 15
-Elemento no serviço: 1 (Elemento da classe 2)
+Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 47 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 15
+Evento de chegada, momento: 48 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 16
 Elemento no serviço: 1 (Elemento da classe 1)
 
 Evento de chegada, momento: 49 segundos
@@ -208,97 +198,97 @@ Elementos na fila 1: 0
 Elementos na fila 2: 16
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 52 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 16
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 52 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 17
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de saída, momento: 55 segundos
+Evento de chegada, momento: 51 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 17
 Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 53 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 16
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 55 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 17
+Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 56 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 18
-Elemento no serviço: 1 (Elemento da classe 1)
+Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 57 segundos
+Evento de chegada, momento: 58 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 18
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 58 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 19
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de saída, momento: 58 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 19
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 57 segundos
+Evento de saída, momento: 60 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 18
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 59 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 19
-Elemento no serviço: 1 (Elemento da classe 2)
-
 Evento de chegada, momento: 61 segundos
-Elementos na fila 1: 1
+Elementos na fila 1: 0
 Elementos na fila 2: 19
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de saída, momento: 61 segundos
+Evento de saída, momento: 64 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 18
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 65 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 19
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 62 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 20
-Elemento no serviço: 1 (Elemento da classe 1)
+Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 66 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 21
-Elemento no serviço: 1 (Elemento da classe 1)
+Elementos na fila 1: 1
+Elementos na fila 2: 19
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 66 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 20
+Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 67 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 22
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de saída, momento: 67 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 21
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 69 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 21
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 69 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 22
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 70 segundos
 Elementos na fila 1: 2
-Elementos na fila 2: 22
+Elementos na fila 2: 20
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 68 segundos
+Elementos na fila 1: 2
+Elementos na fila 2: 21
 Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de saída, momento: 70 segundos
 Elementos na fila 1: 1
+Elementos na fila 2: 21
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 71 segundos
+Elementos na fila 1: 1
 Elementos na fila 2: 22
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 72 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 23
+Evento de saída, momento: 73 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 22
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 75 segundos
+Evento de chegada, momento: 75 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 23
 Elemento no serviço: 1 (Elemento da classe 1)
@@ -308,32 +298,42 @@ Elementos na fila 1: 0
 Elementos na fila 2: 24
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 77 segundos
+Evento de chegada, momento: 78 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 25
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 77 segundos
+Evento de saída, momento: 78 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 24
 Elemento no serviço: 1 (Elemento da classe 2)
 
 Evento de chegada, momento: 79 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 25
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de saída, momento: 81 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 24
-Elemento no serviço: 1 (Elemento da classe 2)
-
-Evento de chegada, momento: 82 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 24
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 82 segundos
+Evento de saída, momento: 80 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 24
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 81 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 25
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 84 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 24
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 85 segundos
+Elementos na fila 1: 0
+Elementos na fila 2: 25
+Elemento no serviço: 1 (Elemento da classe 2)
+
+Evento de chegada, momento: 86 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 25
 Elemento no serviço: 1 (Elemento da classe 2)
@@ -343,73 +343,63 @@ Elementos na fila 1: 1
 Elementos na fila 2: 26
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de chegada, momento: 87 segundos
+Evento de chegada, momento: 88 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 27
 Elemento no serviço: 1 (Elemento da classe 2)
 
-Evento de saída, momento: 87 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 27
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 89 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 27
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 89 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 28
-Elemento no serviço: 1 (Elemento da classe 1)
-
 Evento de saída, momento: 90 segundos
 Elementos na fila 1: 0
+Elementos na fila 2: 27
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 91 segundos
+Elementos na fila 1: 1
+Elementos na fila 2: 27
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 91 segundos
+Elementos na fila 1: 1
 Elementos na fila 2: 28
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 92 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 29
+Evento de chegada, momento: 93 segundos
+Elementos na fila 1: 2
+Elementos na fila 2: 28
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 94 segundos
+Evento de saída, momento: 93 segundos
 Elementos na fila 1: 1
-Elementos na fila 2: 29
+Elementos na fila 2: 28
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 95 segundos
-Elementos na fila 1: 0
-Elementos na fila 2: 29
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 96 segundos
+Evento de chegada, momento: 95 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 29
 Elemento no serviço: 1 (Elemento da classe 1)
 
 Evento de chegada, momento: 96 segundos
-Elementos na fila 1: 1
+Elementos na fila 1: 2
+Elementos na fila 2: 29
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de chegada, momento: 96 segundos
+Elementos na fila 1: 2
 Elementos na fila 2: 30
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de chegada, momento: 97 segundos
+Evento de chegada, momento: 98 segundos
+Elementos na fila 1: 2
+Elementos na fila 2: 31
+Elemento no serviço: 1 (Elemento da classe 1)
+
+Evento de saída, momento: 98 segundos
 Elementos na fila 1: 1
 Elementos na fila 2: 31
 Elemento no serviço: 1 (Elemento da classe 1)
 
-Evento de saída, momento: 97 segundos
+Evento de saída, momento: 100 segundos
 Elementos na fila 1: 0
 Elementos na fila 2: 31
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 99 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 31
-Elemento no serviço: 1 (Elemento da classe 1)
-
-Evento de chegada, momento: 99 segundos
-Elementos na fila 1: 1
-Elementos na fila 2: 32
 Elemento no serviço: 1 (Elemento da classe 1)
 
