@@ -8,68 +8,194 @@ import java.util.List;
 
 public class Escalonador extends Thread{
 
-	private int tempoAtual;
 	private int tempoTotal;
-	private static int numElemFila1;
-	private static int numElemFila2;
-	private int indiceElemento;
-	private boolean escalonadorVago;
-	private static int indice1 = 0;
-    private static int indice2 = 0;
-    private static int indice3 = 0;
-	
-	//private static Random selecionaNumero = new Random();
-	private static GeradorNumerosAleatorios geradorNumerosAleatorios = new GeradorNumerosAleatorios();
-	private static List<Integer> sequenciaAleatoria1;
-	private static List<Integer> sequenciaAleatoria2;
-	private static List<Integer> sequenciaAleatoria3;
+	private int numElemFila1;
+	private int numElemFila2;	
+    private int proxChegada1;
+    private int proxChegada2;
+    private int proxAtendimento;
+    private boolean servidorLivre;
+    private int tempoAtual;
+    private String elementoEmAtendimento;
+	private int numElemServico;
+	private boolean isReceive;
+	      
+	private GeradorNumerosAleatorios geradorNumerosAleatorios1 = new GeradorNumerosAleatorios();
+	private GeradorNumerosAleatorios geradorNumerosAleatorios2 = new GeradorNumerosAleatorios();
+	private GeradorNumerosAleatorios geradorNumerosAleatorios3 = new GeradorNumerosAleatorios();
+	private List<Integer> sequenciaAleatoria1;
+	private List<Integer> sequenciaAleatoria2;
+	private List<Integer> sequenciaAleatoria3;
+	private int indice1 = 0;
+    private int indice2 = 0;
+    private int indice3 = 0;
 
 	public Escalonador(int tempoTotal) {
-		this.tempoTotal = tempoTotal;
-		this.escalonadorVago = true;
-		this.indiceElemento = 1;
-		this.tempoAtual = 0;
-		Escalonador.numElemFila1 = 0;
-		Escalonador.numElemFila2 = 0;
-
 		/*
 		 * Geração de Numeros Aleatorios (Parâmetros):		
 		 * geraValores(semente, k, c, mod, MetodoGeracao)
 		 */
-		sequenciaAleatoria1 = geradorNumerosAleatorios.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
-    	sequenciaAleatoria2 = geradorNumerosAleatorios.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
-    	sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
-    	//sequenciaAleatoria3 = geradorNumerosAleatorios.geraValores(6, 1, 2, 5, MetodoGeracao.MISTO);
+		this.sequenciaAleatoria1 = geradorNumerosAleatorios1.geraValores(12, 7, 0, 11, MetodoGeracao.MULTIPLICATIVO);
+    	this.sequenciaAleatoria2 = geradorNumerosAleatorios2.geraValores(4, 1, 1, 4, MetodoGeracao.MISTO);
+    	this.sequenciaAleatoria3 = geradorNumerosAleatorios3.geraValores(5, 1, 2, 5, MetodoGeracao.MISTO);
+    	
+		this.tempoTotal = tempoTotal;
+		this.numElemFila1 = 0;
+		this.numElemFila2 = 0;
+	    this.proxChegada1 = sequenciaAleatoria1.get(indice1);
+	    this.proxChegada2 =  sequenciaAleatoria2.get(indice2);
+	    this.proxAtendimento = 0;
+		this.servidorLivre = true;
+		this.tempoAtual = 0;
+		this.elementoEmAtendimento = "Sem elemento";
+		this.numElemServico = 0;
+		this.isReceive = false;
+		
+		this.indice1 = 1;
+	    this.indice2 = 1;
+	    this.indice3 = 0;
 	}
 	
-    private static Runnable fila1 = new Runnable() {
-        public void run() {
-            try{
-            	//sleep(1 + gerador.nextInt(12));
-            	//sleep(sequenciaAleatoria1.get(indice1));
-				if (indice1 < sequenciaAleatoria1.size()-1) {
-				      indice1++;	
-				} else {
-				      indice1 = 0;
-				}
-            	Escalonador.numElemFila1++;
-            } catch (Exception e){}
+    @Override
+	public void run() {
+    	limparDados();
+    	
+    	/*
+    	 * Código para produzir arquivo de saida tipo texto
+    	 */
+		FileOutputStream arquivoSaida = null;
+		final PrintStream printStream;
+		// Abrindo Stream de Saida
+		try {
+		   arquivoSaida = new FileOutputStream("Saida_Simulacao.txt", true);
+		   printStream = new PrintStream(arquivoSaida);
+
+		   // Redirecionamento de System.out para Arquivo de Saida
+		   System.setOut(printStream);
+		} catch(final FileNotFoundException e) {
+			e.printStackTrace();
+	    }
+			
+		this.isReceive = true;
+		log();	
+    	for (int i = 0; i < this.tempoTotal; i++) {
+    		tempoSimulacao();
+    		escalonador();
+		}
+    	
+		// Fechando Stream de Saida
+		try {
+			if(arquivoSaida != null) {
+			   arquivoSaida.close();
+			}
+		} catch(final IOException e) {
+			e.printStackTrace();
+		}
+	}
+    
+    private void escalonador() {
+        if (this.proxChegada1 < 1) {
+            if (this.servidorLivre) {
+            	iniciaAtendimento('1');
+            } else {
+                this.numElemFila1 += 1;
+                this.isReceive=true;
+                log();
+				escalonaProximaChegada('1');            	
+            }
+        	
         }
-    };
- 
-    private static Runnable fila2 = new Runnable() {
-        public void run() {
-            try{
-            	sleep(sequenciaAleatoria2.get(indice2));
-				if (indice2 < sequenciaAleatoria2.size()-1) {
-					indice2++;	
-				} else {
-					indice2 = 0;
-				}
-            	Escalonador.numElemFila2++;
-            } catch (Exception e){}
-       }
-    };
+
+        if( this.proxChegada2 < 1) {
+        	if (this.servidorLivre) {
+                iniciaAtendimento('2');
+        	} else {
+        		this.numElemFila2 += 1;
+        		this.isReceive=true;
+                log();
+                escalonaProximaChegada('2');
+        	}
+        }
+            
+
+        if (this.proxAtendimento < 1) {
+            if (!this.servidorLivre) {
+            	finalizaAtendimento();
+            }
+            
+            if (this.numElemFila1 > 0) {
+            	iniciaAtendimento('1');
+            } else if (this.numElemFila2 > 0) {
+            	iniciaAtendimento('2');
+            } else {
+            	this.servidorLivre = true;        	
+            }
+        }
+        
+	}
+    
+	private void iniciaAtendimento(char fila) {
+		this.numElemServico++;
+        if (fila == '1') {
+            if (this.numElemFila1 > 0) {
+            	this.numElemFila1 -= 1;
+            }
+            this.elementoEmAtendimento = "Elemento da classe 1";     	
+        } else {
+            if (this.numElemFila2 > 0) {
+            	this.numElemFila2 -= 1;
+            }
+            this.elementoEmAtendimento = "Elemento da classe 2";     	
+        }
+
+        this.servidorLivre = false;
+        
+        this.proxAtendimento += 1 + sequenciaAleatoria3.get(indice3);
+		if (indice3 < sequenciaAleatoria3.size()-1) {
+			indice3++;	
+		} else {
+			indice3 = 0;
+		}
+		
+        log();
+	}
+	
+	private void finalizaAtendimento() {
+		this.numElemServico--;
+	    this.servidorLivre = true;
+	    this.isReceive=false;
+	}
+
+	private void escalonaProximaChegada(char fila) {
+        if (fila == '1') {
+            this.proxChegada1 = sequenciaAleatoria1.get(indice1);
+			if (indice1 < sequenciaAleatoria1.size()-1) {
+				indice1++;	
+			} else {
+				indice1 = 0;
+			}
+        } else {
+            this.proxChegada2 = sequenciaAleatoria2.get(indice2);
+			if (indice2 < sequenciaAleatoria2.size()-1) {
+				indice2++;	
+			} else {
+				indice2 = 0;
+			}
+        }
+	}
+
+	private void tempoSimulacao() {
+        this.tempoAtual += 1;
+        if(this.proxChegada1 > 0) {
+            this.proxChegada1 -= 1;
+        }
+        if (this.proxChegada2 > 0) {
+        	this.proxChegada2 -= 1;
+        }
+        if (this.proxAtendimento > 0) {
+        	this.proxAtendimento -= 1;        	
+        }	
+	}
 	
     private void limparDados() {
 		FileOutputStream arquivoLimpo = null;
@@ -96,76 +222,26 @@ public class Escalonador extends Thread{
 		}
     }
       
-    @Override
-	public void run() {
-    	limparDados();
-    	
-		while(this.tempoTotal > tempoAtual) {
-	        new Thread(fila1).start();
-	        new Thread(fila2).start();	
-			
-			if(escalonadorVago) {
-				escalonadorVago = false;
-				Log();
-
-				tempoAtual += 1 + sequenciaAleatoria3.get(indice3);
-				if (indice3 < sequenciaAleatoria3.size()-1) {
-					indice3++;	
-				} else {
-					indice3 = 0;
-				}
-				
-				if(numElemFila1 != 0) {
-					numElemFila1--;
-					escalonadorVago = true;
-				}else if (numElemFila2 != 0){
-					numElemFila2--;
-					escalonadorVago = true;
-				}
-				Log();
-				this.indiceElemento++;
-			}
-			
-		}	
-	}
-	
-	public void Log() {
-		FileOutputStream arquivoSaida = null;
-		final PrintStream printStream;
-
-		// Abrindo Stream de Saida
-		try {
-		   arquivoSaida = new FileOutputStream("Saida_Simulacao.txt", true);
-		   printStream = new PrintStream(arquivoSaida);
-
-		   // Redirecionamento de System.out para Arquivo de Saida
-		   System.setOut(printStream);
-		} catch(final FileNotFoundException e) {
-			e.printStackTrace();
-	    }
-		
-		if(escalonadorVago) {
-			System.out.println("Evento de saída, momento: " + tempoAtual);
-		}else {
-			System.out.println("Evento de chegada, momento: " + tempoAtual);
+	public void log() {	
+		if (numElemServico==0) {
+			this.elementoEmAtendimento = "Sem elemento";
+			System.out.println("Evento de hibernação, momento: " + tempoAtual + " segundos");
+		} else {
+			if(!this.isReceive) {
+				System.out.println("Evento de saída, momento: " + tempoAtual + " segundos");
+			} else {
+				System.out.println("Evento de chegada, momento: " + tempoAtual + " segundos");
+			}			
 		}
 		System.out.println("Elementos na fila 1: " + numElemFila1);
 		System.out.println("Elementos na fila 2: " + numElemFila2);
-		System.out.println("Elemento no serviço: " + indiceElemento);	
-		System.out.println();
-		
-		// Fechando Stream de Saida
-		try {
-			if(arquivoSaida != null) {
-			   arquivoSaida.close();
-			}
-		} catch(final IOException e) {
-			e.printStackTrace();
-		}
+		System.out.println("Elemento no serviço: " + numElemServico + " (" + this.elementoEmAtendimento + ")");	
+		System.out.println();	
 	}
 	
 	public static void main(String[] args) {
 		int tempoDeEscalonamento = 100;
+		Escalonador esc = new Escalonador(tempoDeEscalonamento);
 
 		System.out.println("--------------- Inicio da Simulação ---------------");
 		System.out.println();
@@ -173,15 +249,8 @@ public class Escalonador extends Thread{
 		System.out.println("Tempo em Segundos: " + tempoDeEscalonamento);
 		System.out.println("Metodos para GNA: -" + MetodoGeracao.MULTIPLICATIVO);
 		System.out.println("                  -" + MetodoGeracao.MISTO);
-		
-		Escalonador esc = new Escalonador(tempoDeEscalonamento);
-		esc.start();
-		
-		System.out.println("Saida (Arquivo com os eventos): Saida_Simulacao.txt");
-		System.out.println("#####################################################");
-
-		System.out.println();
-		System.out.println("---------- Simulação Finalizada com Êxito ----------");
+	
+		esc.run();
 	}
 		
 }
