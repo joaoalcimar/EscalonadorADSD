@@ -153,7 +153,6 @@ public class Escalonador extends Thread{
         this.servidorLivre = false;
         
         this.proxAtendimento += 1 + sequenciaAleatoria3.get(indice3);
-        //this.proxAtendimento = 2 + rand.nextInt(5);
 		if (indice3 < sequenciaAleatoria3.size()-1) {
 			indice3++;	
 		} else {
@@ -172,7 +171,6 @@ public class Escalonador extends Thread{
 	private void escalonaProximaChegada(char fila) {
         if (fila == '1') {
             this.proxChegada1 = sequenciaAleatoria1.get(indice1);
-            //this.proxChegada1 = 1 + rand.nextInt(12);
 			if (indice1 < sequenciaAleatoria1.size()-1) {
 				indice1++;	
 			} else {
@@ -180,7 +178,6 @@ public class Escalonador extends Thread{
 			}
         } else {
             this.proxChegada2 = sequenciaAleatoria2.get(indice2);
-            //this.proxChegada2 = 1 + rand.nextInt(4);
 			if (indice2 < sequenciaAleatoria2.size()-1) {
 				indice2++;	
 			} else {
